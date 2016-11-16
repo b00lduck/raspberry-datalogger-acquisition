@@ -4,7 +4,7 @@ import (
 	"github.com/kidoman/embd"
 	_ "github.com/kidoman/embd/host/all"
 	"time"
-	"github.com/b00lduck/raspberry-datalogger-dataservice-client/client"
+	"github.com/b00lduck/raspberry-datalogger-dataservice-client"
 	"io/ioutil"
 )
 
