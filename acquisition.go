@@ -12,10 +12,7 @@ import (
 func main() {
 
     d1 := []byte("17\n")
-    err := ioutil.WriteFile("/sys/class/gpio/unexport", d1, 0644)
-    if err != nil {
-    	panic(err)
-    }
+    ioutil.WriteFile("/sys/class/gpio/unexport", d1, 0644)
 
     if err := embd.InitGPIO(); err != nil {
 		panic(err)
