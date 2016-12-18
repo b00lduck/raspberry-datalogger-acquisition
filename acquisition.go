@@ -49,7 +49,7 @@ func main() {
 		if count >= 3 {
 			state = true
 			count = 0
-			client.SendCounterTick("GAS_1")
+			client.SendCounterTick("gas_usage")
 		}
 
 		time.Sleep(10 * time.Millisecond)
