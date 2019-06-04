@@ -1,9 +1,9 @@
-FROM rem/rpi-golang-1.7:latest
+FROM balenalib/raspberry-pi-golang AS builder
+COPY . /src
+WORKDIR /src
+RUN go build -o /app .
 
-WORKDIR /gopath/src/github.com/b00lduck/raspberry-datalogger-acquisition
-ENTRYPOINT ["raspberry-datalogger-acquisition"]
+FROM scratch
+COPY --from=builder /app /
+ENTRYPOINT [ "/app" ]
 
-ADD . /gopath/src/github.com/b00lduck/raspberry-datalogger-acquisition
-RUN go get
-RUN go build
-USER root
